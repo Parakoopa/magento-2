@@ -120,7 +120,7 @@ class Debit extends Base
         if (isset($aCreditmemo['shipping_amount']) && $aCreditmemo['shipping_amount'] != 0) {
             $aPositions['delcost'] = $aCreditmemo['shipping_amount'];
         }
-        if ($blFull !== true && $oCreditmemo->getBaseDiscountAmount() != 0) {
+        if ($oCreditmemo->getBaseDiscountAmount() != 0) {
             $aPositions['discount'] = $oCreditmemo->getBaseDiscountAmount();
             if ($this->shopHelper->getConfigParam('currency') == 'display') {
                 $aPositions['discount'] = $oCreditmemo->getDiscountAmount();
